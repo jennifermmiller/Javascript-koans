@@ -103,15 +103,16 @@ describe("About Applying What We Have Learnt", function() {
 
   it("should count the ingredient occurrence (functional)", function () {
     var ingredientCount = { "{ingredient name}": 0 };
-    // pluck instead of map?
     /* chain() together map(), flatten() and reduce() */
+    // pluck instead of map?
     _(products).chain() //Chains all below fns
-      .map(function(food){ //pulls out all ingredients from each object
+      .map(function(food){ //returns all ingredients from each object
         return food.ingredients
       })
       .flatten() //takes all ingreds and puts into one array
-      .reduce()//not entirely sure what to do here
-      .value()
+      .reduce(function(list, ingredient){
+      //not entirely sure what happens here
+      });
 
 
     expect(ingredientCount['mushrooms']).toBe(2);
